@@ -49,7 +49,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="py-20 px-6 bg-white/50 dark:bg-background">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial="hidden"
@@ -60,13 +60,13 @@ const About = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold gradient-text mb-6"
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-neon-cyan dark:to-neon-blue bg-clip-text text-transparent mb-6"
           >
             About Me
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="text-xl text-gray-600 dark:text-muted-foreground max-w-3xl mx-auto"
           >
             Passionate developer with a love for creating exceptional digital experiences
           </motion.p>
@@ -80,9 +80,9 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <div className="glass-card p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-foreground mb-4">My Journey</h3>
-              <div className="space-y-4 text-muted-foreground">
+            <div className="bg-white/90 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/20 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-foreground mb-4">My Journey</h3>
+              <div className="space-y-4 text-gray-600 dark:text-muted-foreground">
                 <p>
                   Started my coding journey in 2019 with a curiosity about how websites work. 
                   What began as a hobby quickly became a passion as I discovered the power 
@@ -106,25 +106,25 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="glass-card p-6 rounded-2xl"
+              className="bg-white/90 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/20 rounded-2xl p-6"
             >
-              <h4 className="text-lg font-semibold text-foreground mb-4">Quick Timeline</h4>
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-foreground mb-4">Quick Timeline</h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-neon-cyan rounded-full"></div>
-                  <span className="text-muted-foreground">2024 - Senior Full Stack Developer</span>
+                  <span className="text-gray-600 dark:text-muted-foreground">2024 - Senior Full Stack Developer</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-neon-blue rounded-full"></div>
-                  <span className="text-muted-foreground">2022 - Full Stack Developer</span>
+                  <span className="text-gray-600 dark:text-muted-foreground">2022 - Full Stack Developer</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                  <span className="text-muted-foreground">2020 - Frontend Developer</span>
+                  <span className="text-gray-600 dark:text-muted-foreground">2020 - Frontend Developer</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
-                  <span className="text-muted-foreground">2019 - Started Learning</span>
+                  <span className="text-gray-600 dark:text-muted-foreground">2019 - Started Learning</span>
                 </div>
               </div>
             </motion.div>
@@ -145,15 +145,15 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="glass-card p-6 rounded-xl text-center group hover:neon-glow transition-all duration-300"
+                className="bg-white/90 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/20 rounded-xl text-center group hover:shadow-xl dark:hover:shadow-neon-cyan/10 transition-all duration-300 p-6"
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-gradient-to-r from-neon-cyan to-neon-blue">
                   <highlight.icon className="w-6 h-6 text-black" />
                 </div>
-                <h4 className="text-lg font-semibold text-foreground mb-2">
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-foreground mb-2">
                   {highlight.title}
                 </h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-gray-600 dark:text-muted-foreground">
                   {highlight.description}
                 </p>
               </motion.div>

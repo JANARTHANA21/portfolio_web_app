@@ -62,7 +62,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-6 bg-background">
+    <section id="contact" className="py-20 px-6 bg-white/50 dark:bg-background">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -71,10 +71,10 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-neon-cyan dark:to-neon-blue bg-clip-text text-transparent mb-6">
             Get In Touch
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-muted-foreground max-w-3xl mx-auto">
             Ready to bring your ideas to life? Let's discuss your next project.
           </p>
         </motion.div>
@@ -88,8 +88,8 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <div className="glass-card p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-foreground mb-6">
+            <div className="bg-white/90 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/20 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-foreground mb-6">
                 Let's Connect
               </h3>
               <div className="space-y-6">
@@ -101,22 +101,22 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     href={item.href}
-                    className="flex items-center space-x-4 p-4 rounded-lg bg-background/50 hover:bg-background/70 transition-colors duration-300 group"
+                    className="flex items-center space-x-4 p-4 rounded-lg bg-gray-50/80 dark:bg-background/50 hover:bg-gray-100/80 dark:hover:bg-background/70 transition-colors duration-300 group"
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-neon-cyan to-neon-blue rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <item.icon className="w-6 h-6 text-black" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground">{item.title}</h4>
-                      <p className="text-muted-foreground">{item.detail}</p>
+                      <h4 className="font-semibold text-gray-800 dark:text-foreground">{item.title}</h4>
+                      <p className="text-gray-600 dark:text-muted-foreground">{item.detail}</p>
                     </div>
                   </motion.a>
                 ))}
               </div>
 
               {/* Social Links */}
-              <div className="mt-8 pt-8 border-t border-border">
-                <h4 className="text-lg font-semibold text-foreground mb-4">Follow Me</h4>
+              <div className="mt-8 pt-8 border-t border-gray-200 dark:border-border">
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-foreground mb-4">Follow Me</h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social) => (
                     <motion.a
@@ -126,7 +126,7 @@ const Contact = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 glass-card rounded-full text-muted-foreground transition-colors duration-300 ${social.color}`}
+                      className={`p-3 bg-white/90 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/20 rounded-full text-gray-600 dark:text-muted-foreground transition-colors duration-300 ${social.color}`}
                       aria-label={social.name}
                     >
                       <social.icon className="w-5 h-5" />
@@ -144,14 +144,14 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card p-8 rounded-2xl space-y-6">
-              <h3 className="text-2xl font-bold text-foreground mb-6">
+            <form onSubmit={handleSubmit} className="bg-white/90 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/20 rounded-2xl p-8 space-y-6">
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-foreground mb-6">
                 Send a Message
               </h3>
               
               <div className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-800 dark:text-foreground mb-2">
                     Name
                   </label>
                   <input
@@ -161,13 +161,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-background/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 text-foreground placeholder-muted-foreground"
+                    className="w-full px-4 py-3 bg-gray-50/80 dark:bg-background/50 border border-gray-200 dark:border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 text-gray-800 dark:text-foreground placeholder-gray-500 dark:placeholder-muted-foreground"
                     placeholder="Your Name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-800 dark:text-foreground mb-2">
                     Email
                   </label>
                   <input
@@ -177,13 +177,13 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-background/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 text-foreground placeholder-muted-foreground"
+                    className="w-full px-4 py-3 bg-gray-50/80 dark:bg-background/50 border border-gray-200 dark:border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 text-gray-800 dark:text-foreground placeholder-gray-500 dark:placeholder-muted-foreground"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-800 dark:text-foreground mb-2">
                     Message
                   </label>
                   <textarea
@@ -193,7 +193,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-background/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 text-foreground placeholder-muted-foreground resize-none"
+                    className="w-full px-4 py-3 bg-gray-50/80 dark:bg-background/50 border border-gray-200 dark:border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 text-gray-800 dark:text-foreground placeholder-gray-500 dark:placeholder-muted-foreground resize-none"
                     placeholder="Tell me about your project..."
                   />
                 </div>
