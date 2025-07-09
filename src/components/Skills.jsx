@@ -1,65 +1,64 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Code, 
-  Palette, 
-  Database, 
-  Globe, 
-  Smartphone, 
-  Zap,
-  Monitor,
-  Server,
-  GitBranch,
-  Layers
-} from 'lucide-react';
+import { Code, Database, Globe, Smartphone, Cloud, Zap } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Frontend Development',
-      icon: Monitor,
+      title: 'Frontend',
+      icon: Globe,
       skills: [
-        { name: 'React', level: 95, color: 'from-blue-500 to-cyan-500' },
-        { name: 'JavaScript', level: 92, color: 'from-yellow-400 to-orange-500' },
-        { name: 'TypeScript', level: 88, color: 'from-blue-600 to-blue-400' },
-        { name: 'Tailwind CSS', level: 90, color: 'from-teal-400 to-blue-500' },
-        { name: 'HTML/CSS', level: 95, color: 'from-orange-500 to-red-500' },
-      ]
+        { name: 'React', level: 95 },
+        { name: 'JavaScript', level: 92 },
+        { name: 'TypeScript', level: 88 },
+        { name: 'HTML/CSS', level: 95 },
+        { name: 'Tailwind CSS', level: 90 },
+        { name: 'Next.js', level: 85 }
+      ],
+      color: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'Backend Development',
-      icon: Server,
-      skills: [
-        { name: 'Node.js', level: 85, color: 'from-green-500 to-green-400' },
-        { name: 'Express.js', level: 80, color: 'from-gray-600 to-gray-500' },
-        { name: 'Python', level: 78, color: 'from-blue-500 to-yellow-500' },
-        { name: 'REST APIs', level: 88, color: 'from-purple-500 to-pink-500' },
-        { name: 'GraphQL', level: 75, color: 'from-pink-500 to-purple-500' },
-      ]
-    },
-    {
-      title: 'Database & Cloud',
+      title: 'Backend',
       icon: Database,
       skills: [
-        { name: 'MongoDB', level: 82, color: 'from-green-600 to-green-500' },
-        { name: 'PostgreSQL', level: 78, color: 'from-blue-600 to-blue-500' },
-        { name: 'Firebase', level: 85, color: 'from-yellow-500 to-orange-500' },
-        { name: 'AWS', level: 72, color: 'from-orange-500 to-yellow-500' },
-        { name: 'Docker', level: 70, color: 'from-blue-500 to-cyan-500' },
-      ]
+        { name: 'Node.js', level: 88 },
+        { name: 'Python', level: 82 },
+        { name: 'PostgreSQL', level: 80 },
+        { name: 'MongoDB', level: 85 },
+        { name: 'REST APIs', level: 90 },
+        { name: 'GraphQL', level: 75 }
+      ],
+      color: 'from-green-500 to-emerald-500'
     },
     {
-      title: 'Tools & Others',
-      icon: Zap,
+      title: 'Mobile',
+      icon: Smartphone,
       skills: [
-        { name: 'Git/GitHub', level: 90, color: 'from-gray-800 to-gray-600' },
-        { name: 'VS Code', level: 95, color: 'from-blue-600 to-blue-500' },
-        { name: 'Figma', level: 80, color: 'from-purple-500 to-pink-500' },
-        { name: 'Webpack', level: 75, color: 'from-blue-400 to-cyan-400' },
-        { name: 'Testing', level: 73, color: 'from-green-500 to-teal-500' },
-      ]
+        { name: 'React Native', level: 80 },
+        { name: 'Flutter', level: 70 },
+        { name: 'iOS (Swift)', level: 65 },
+        { name: 'Android', level: 68 }
+      ],
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      title: 'DevOps & Cloud',
+      icon: Cloud,
+      skills: [
+        { name: 'AWS', level: 78 },
+        { name: 'Docker', level: 82 },
+        { name: 'Kubernetes', level: 70 },
+        { name: 'CI/CD', level: 85 },
+        { name: 'Linux', level: 80 }
+      ],
+      color: 'from-orange-500 to-red-500'
     }
+  ];
+
+  const tools = [
+    'VS Code', 'Git', 'Figma', 'Postman', 'Jira', 'Slack',
+    'Webpack', 'Vite', 'ESLint', 'Prettier', 'Jest', 'Cypress'
   ];
 
   const containerVariants = {
@@ -84,7 +83,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 px-6 bg-background/50">
+    <section id="skills" className="py-20 px-6 bg-white/50 dark:bg-background/50">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial="hidden"
@@ -95,100 +94,93 @@ const Skills = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold gradient-text mb-6"
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-neon-cyan dark:to-neon-blue bg-clip-text text-transparent mb-6"
           >
             Skills & Expertise
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="text-xl text-gray-600 dark:text-muted-foreground max-w-3xl mx-auto"
           >
-            Technologies I work with to bring ideas to life
+            Technologies and tools I work with to bring ideas to life
           </motion.p>
         </motion.div>
 
+        {/* Skills Grid */}
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16"
         >
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
               variants={itemVariants}
-              whileHover={{ y: -5 }}
-              className="glass-card p-8 rounded-2xl hover:neon-glow transition-all duration-300"
+              className="bg-white/90 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/20 rounded-2xl p-8 hover:shadow-xl dark:hover:shadow-neon-cyan/10 transition-all duration-300"
             >
               <div className="flex items-center mb-6">
-                <div className="p-3 bg-gradient-to-r from-neon-cyan to-neon-blue rounded-lg mr-4">
-                  <category.icon className="w-6 h-6 text-black" />
+                <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color} mr-4`}>
+                  <category.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">{category.title}</h3>
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-foreground">
+                  {category.title}
+                </h3>
               </div>
 
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ 
-                      duration: 0.5, 
-                      delay: categoryIndex * 0.1 + skillIndex * 0.05 
-                    }}
-                    className="space-y-2"
-                  >
+                  <div key={skill.name} className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-foreground font-medium">{skill.name}</span>
-                      <span className="text-muted-foreground text-sm">{skill.level}%</span>
+                      <span className="text-gray-700 dark:text-foreground font-medium">
+                        {skill.name}
+                      </span>
+                      <span className="text-sm text-gray-500 dark:text-muted-foreground">
+                        {skill.level}%
+                      </span>
                     </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
-                        transition={{ 
-                          duration: 1.2, 
-                          delay: categoryIndex * 0.2 + skillIndex * 0.1,
-                          ease: "easeOut"
-                        }}
-                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
+                        transition={{ duration: 1, delay: categoryIndex * 0.2 + skillIndex * 0.1 }}
+                        className={`h-2 rounded-full bg-gradient-to-r ${category.color}`}
                       />
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </motion.div>
           ))}
         </motion.div>
 
+        {/* Tools & Technologies */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 text-center"
+          transition={{ duration: 0.8 }}
+          className="text-center"
         >
-          <div className="glass-card p-8 rounded-2xl max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Always Learning</h3>
-            <p className="text-muted-foreground mb-6">
-              Technology evolves rapidly, and so do I. Currently exploring AI/ML integration, 
-              Web3 technologies, and advanced cloud architectures to stay ahead of the curve.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {['Next.js', 'Svelte', 'Rust', 'Kubernetes', 'Machine Learning', 'Web3'].map((tech) => (
-                <motion.span
-                  key={tech}
-                  whileHover={{ scale: 1.05 }}
-                  className="px-4 py-2 bg-gradient-to-r from-neon-cyan/20 to-neon-blue/20 text-foreground rounded-full text-sm border border-neon-cyan/30"
-                >
-                  {tech}
-                </motion.span>
-              ))}
-            </div>
+          <h3 className="text-2xl font-bold text-gray-800 dark:text-foreground mb-8">
+            Tools & Technologies
+          </h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            {tools.map((tool, index) => (
+              <motion.span
+                key={tool}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                className="px-4 py-2 bg-white/90 dark:bg-white/10 text-gray-700 dark:text-foreground border border-gray-200 dark:border-white/20 rounded-full text-sm font-medium backdrop-blur-sm hover:shadow-lg transition-all duration-300"
+              >
+                {tool}
+              </motion.span>
+            ))}
           </div>
         </motion.div>
       </div>

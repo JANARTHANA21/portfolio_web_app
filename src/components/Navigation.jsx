@@ -33,6 +33,11 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
     setIsOpen(false);
   };
 
+  const handleThemeToggle = () => {
+    console.log('Theme toggle clicked, current darkMode:', darkMode);
+    toggleDarkMode();
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -68,10 +73,15 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg glass-card neon-glow"
+              onClick={handleThemeToggle}
+              className="p-2 rounded-lg glass-card neon-glow transition-colors duration-300"
+              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             >
-              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {darkMode ? (
+                <Sun className="w-5 h-5 text-yellow-400" />
+              ) : (
+                <Moon className="w-5 h-5 text-blue-400" />
+              )}
             </motion.button>
           </div>
 
@@ -79,10 +89,15 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg glass-card"
+              onClick={handleThemeToggle}
+              className="p-2 rounded-lg glass-card transition-colors duration-300"
+              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             >
-              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {darkMode ? (
+                <Sun className="w-5 h-5 text-yellow-400" />
+              ) : (
+                <Moon className="w-5 h-5 text-blue-400" />
+              )}
             </motion.button>
             
             <motion.button
