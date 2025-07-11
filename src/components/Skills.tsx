@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -29,10 +30,10 @@ const Skills: React.FC = () => {
   ];
 
   const tools = [
-    'VS Code', 'Git', 'Postman', 'Vite', 'CRA (Create React App)',
-    'Nodemailer', 'Multer', 'Cloudinary', 'dotenv', 'Esbuild', 
-    'Vercel', 'Netlify', 'Render', 'MongoDB Atlas', 'Helmet', 
-    'CORS', 'Rate Limiting', 'Input Validation'
+    'VS Code', 'Git', 'Vite', 'CRA (Create React App)',
+    'Nodemailer', 'Multer', 'Cloudinary', 'dotenv', 'Postman',
+    'Esbuild', 'Vercel', 'Netlify', 'Render', 
+    'MongoDB Atlas', 'Helmet', 'CORS', 'Rate Limiting', 'Input Validation'
   ];
 
   const containerVariants = {
