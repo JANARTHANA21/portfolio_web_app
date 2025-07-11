@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -174,8 +173,8 @@ const Skills: React.FC = () => {
                       <span className="text-gray-600 dark:text-muted-foreground text-sm">{skill.level}%</span>
                     </div>
                     
-                    {/* Progress Bar */}
-                    <div className="w-full bg-gray-200 dark:bg-muted rounded-full h-2">
+                    {/* Progress Bar with Gradient */}
+                    <div className="w-full bg-gray-200 dark:bg-muted rounded-full h-3 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -185,9 +184,12 @@ const Skills: React.FC = () => {
                           delay: categoryIndex * 0.2 + skillIndex * 0.1 + 0.3,
                           ease: "easeOut"
                         }}
-                        className="bg-gradient-to-r from-neon-cyan to-neon-blue h-2 rounded-full relative overflow-hidden"
+                        className="bg-gradient-to-r from-neon-cyan via-neon-blue to-purple-500 h-3 rounded-full relative overflow-hidden shadow-lg"
+                        style={{
+                          boxShadow: '0 0 10px rgba(0, 255, 255, 0.5)'
+                        }}
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform skew-x-12 animate-pulse-slow"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform skew-x-12 animate-pulse-slow"></div>
                       </motion.div>
                     </div>
                   </motion.div>
