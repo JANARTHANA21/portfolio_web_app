@@ -7,33 +7,32 @@ const Skills: React.FC = () => {
     {
       title: 'Frontend',
       skills: [
-        { name: 'React', level: 95 },
-        { name: 'TypeScript', level: 90 },
-        { name: 'Tailwind CSS', level: 92 },
-        { name: 'Next.js', level: 88 },
-        { name: 'Framer Motion', level: 85 },
+        { name: 'HTML/CSS3', level: 95 },
+        { name: 'Bootstrap', level: 65 },
+        { name: 'Tailwind CSS', level: 70 },
+        { name: 'JavaScript', level: 92 },
+        { name: 'React', level: 85 },
+        { name: 'Redux', level: 88 },
+        { name: 'React Query', level: 83 },
       ]
     },
     {
       title: 'Backend',
       skills: [
-        { name: 'Node.js', level: 90 },
-        { name: 'Express', level: 88 },
-        { name: 'MongoDB', level: 85 },
-        { name: 'PostgreSQL', level: 82 },
-        { name: 'GraphQL', level: 78 },
-      ]
-    },
-    {
-      title: 'Tools & Others',
-      skills: [
-        { name: 'Git', level: 92 },
-        { name: 'Docker', level: 80 },
-        { name: 'AWS', level: 75 },
-        { name: 'Figma', level: 85 },
-        { name: 'Jest', level: 88 },
+        { name: 'Node.js', level: 88 },
+        { name: 'Express.js', level: 90 },
+        { name: 'MongoDB', level: 90 },
+        { name: 'Mongoose', level: 98 },
+        { name: 'REST APIs', level: 90 },
       ]
     }
+  ];
+
+  const tools = [
+    'VS Code', 'Git', 'Postman', 'Vite', 'CRA (Create React App)',
+    'Nodemailer', 'Multer', 'Cloudinary', 'dotenv', 'Esbuild', 
+    'Vercel', 'Netlify', 'Render', 'MongoDB Atlas', 'Helmet', 
+    'CORS', 'Rate Limiting', 'Input Validation'
   ];
 
   const containerVariants = {
@@ -143,7 +142,7 @@ const Skills: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
         >
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
@@ -195,6 +194,33 @@ const Skills: React.FC = () => {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Tools & Technologies */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-16"
+        >
+          <h3 className="text-3xl font-bold text-gray-800 dark:text-foreground mb-12 text-center">Tools & Technologies</h3>
+          
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+            {tools.map((tool, index) => (
+              <motion.span
+                key={tool}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                className="px-4 py-2 bg-white/95 dark:bg-white/10 text-gray-700 dark:text-foreground border border-gray-200 dark:border-white/20 rounded-full text-sm font-medium backdrop-blur-sm hover:shadow-lg transition-all duration-300"
+              >
+                {tool}
+              </motion.span>
+            ))}
+          </div>
         </motion.div>
 
         {/* Coding Activity Section */}
