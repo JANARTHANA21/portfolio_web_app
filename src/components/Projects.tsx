@@ -197,7 +197,7 @@ const Projects: React.FC = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </AnimatePresence>
 
         {/* View More Button */}
