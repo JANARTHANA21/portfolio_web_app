@@ -84,50 +84,22 @@ const About = () => {
               <h3 className="text-2xl font-bold text-gray-800 dark:text-foreground mb-4">My Journey</h3>
               <div className="space-y-4 text-gray-600 dark:text-muted-foreground">
                 <p>
-                  Started my coding journey in 2019 with a curiosity about how websites work. 
-                  What began as a hobby quickly became a passion as I discovered the power 
-                  of creating solutions that impact people's lives.
+                  I began my coding journey in 2020 with a genuine curiosity about how web applications work. 
+                  Over time, that curiosity evolved into a strong passion for building practical, real-world 
+                  solutions using modern web technologies.
                 </p>
                 <p>
-                  Over the years, I've developed expertise in modern web technologies, 
-                  focusing on React, Node.js, and cloud platforms. I love the challenge 
+                  Without access to premium resources or formal training, I took the initiative to self-learn 
+                  the MERN stack and started building full-stack projects from scratch. I love the challenge 
                   of turning complex problems into elegant, user-friendly solutions.
                 </p>
                 <p>
-                  When I'm not coding, you'll find me exploring new technologies, 
-                  contributing to open source projects, or sharing knowledge with the 
-                  developer community.
+                  I'm deeply committed to solving meaningful problems through code. Beyond development, I actively 
+                  improve my design sense, explore new technologies, and sharpen my communication skills to prepare 
+                  for opportunities in the IT field.
                 </p>
               </div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="bg-white/90 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/20 rounded-2xl p-6"
-            >
-              <h4 className="text-lg font-semibold text-gray-800 dark:text-foreground mb-4">Quick Timeline</h4>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-neon-cyan rounded-full"></div>
-                  <span className="text-gray-600 dark:text-muted-foreground">2024 - Senior Full Stack Developer</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-neon-blue rounded-full"></div>
-                  <span className="text-gray-600 dark:text-muted-foreground">2022 - Full Stack Developer</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-muted-foreground">2020 - Frontend Developer</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-muted-foreground">2019 - Started Learning</span>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           <motion.div

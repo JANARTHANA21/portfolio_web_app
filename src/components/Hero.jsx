@@ -56,7 +56,7 @@ const Hero = () => {
               textShadow: '0 0 30px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 153, 255, 0.3)'
             }}
           >
-            Alex Johnson
+            JANARTHANA
           </motion.h1>
 
           <div className="text-2xl md:text-4xl font-semibold text-foreground h-16 flex items-center justify-center">
@@ -64,11 +64,9 @@ const Hero = () => {
               sequence={[
                 'Full Stack Developer',
                 2000,
-                'React Specialist',
+                'Problem Solver',
                 2000,
                 'Tech Explorer',
-                2000,
-                'Problem Solver',
                 2000,
               ]}
               wrapper="span"
@@ -136,8 +134,8 @@ const Hero = () => {
             className="flex justify-center space-x-6 mt-8"
           >
             {[
-              { icon: Github, href: 'https://github.com', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+              { icon: Github, href: 'https://github.com/JANARTHANA21', label: 'GitHub' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/janarthana21/', label: 'LinkedIn' },
             ].map(({ icon: Icon, href, label }) => (
               <motion.a
                 key={label}
