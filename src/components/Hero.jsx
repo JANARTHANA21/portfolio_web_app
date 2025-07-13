@@ -6,7 +6,7 @@ import { Download, Mail, Github, Linkedin } from 'lucide-react';
 import ThreeDHero from './ThreeDHero';
 import ParticlesBackground from './ParticlesBackground';
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const scrollToProjects = () => {
     const element = document.querySelector('#projects');
     if (element) {
@@ -23,18 +23,14 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Elements */}
       <ParticlesBackground />
       
-      {/* Enhanced 3D Background */}
       <div className="absolute inset-0 opacity-40 z-0">
         <ThreeDHero />
       </div>
 
-      {/* Gradient Overlay for Better Text Readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background/30 z-5" />
 
-      {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -42,7 +38,6 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          {/* Greeting */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -52,7 +47,6 @@ const Hero: React.FC = () => {
             Hello, I'm
           </motion.p>
 
-          {/* Name with Enhanced Glow Effect */}
           <motion.h1
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -65,7 +59,6 @@ const Hero: React.FC = () => {
             Alex Johnson
           </motion.h1>
 
-          {/* Animated Roles */}
           <div className="text-2xl md:text-4xl font-semibold text-foreground h-16 flex items-center justify-center">
             <TypeAnimation
               sequence={[
@@ -85,7 +78,6 @@ const Hero: React.FC = () => {
             />
           </div>
 
-          {/* Description */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -96,7 +88,6 @@ const Hero: React.FC = () => {
             Passionate about creating solutions that make a difference.
           </motion.p>
 
-          {/* CTA Buttons with Enhanced Glass Effect */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -138,7 +129,6 @@ const Hero: React.FC = () => {
             </motion.a>
           </motion.div>
 
-          {/* Social Links with Enhanced Effects */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -8,32 +7,33 @@ const Skills: React.FC = () => {
     {
       title: 'Frontend',
       skills: [
-        { name: 'HTML/CSS3', level: 95 },
-        { name: 'Bootstrap', level: 65 },
-        { name: 'Tailwind CSS', level: 70 },
-        { name: 'JavaScript', level: 92 },
-        { name: 'React', level: 85 },
-        { name: 'Redux', level: 88 },
-        { name: 'React Query', level: 83 },
+        { name: 'React', level: 95 },
+        { name: 'TypeScript', level: 90 },
+        { name: 'Tailwind CSS', level: 92 },
+        { name: 'Next.js', level: 88 },
+        { name: 'Framer Motion', level: 85 },
       ]
     },
     {
       title: 'Backend',
       skills: [
-        { name: 'Node.js', level: 88 },
-        { name: 'Express.js', level: 90 },
-        { name: 'MongoDB', level: 90 },
-        { name: 'Mongoose', level: 98 },
-        { name: 'REST APIs', level: 90 },
+        { name: 'Node.js', level: 90 },
+        { name: 'Express', level: 88 },
+        { name: 'MongoDB', level: 85 },
+        { name: 'PostgreSQL', level: 82 },
+        { name: 'GraphQL', level: 78 },
+      ]
+    },
+    {
+      title: 'Tools & Others',
+      skills: [
+        { name: 'Git', level: 92 },
+        { name: 'Docker', level: 80 },
+        { name: 'AWS', level: 75 },
+        { name: 'Figma', level: 85 },
+        { name: 'Jest', level: 88 },
       ]
     }
-  ];
-
-  const tools = [
-    'VS Code', 'Git', 'Vite', 'CRA (Create React App)',
-    'Nodemailer', 'Multer', 'Cloudinary', 'dotenv', 'Postman',
-    'Esbuild', 'Vercel', 'Netlify', 'Render', 
-    'MongoDB Atlas', 'Helmet', 'CORS', 'Rate Limiting', 'Input Validation'
   ];
 
   const containerVariants = {
@@ -126,7 +126,7 @@ const Skills: React.FC = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-neon-cyan dark:to-neon-blue bg-clip-text text-transparent mb-6"
+            className="text-4xl md:text-5xl font-bold gradient-text mb-6"
           >
             Skills & Technologies
           </motion.h2>
@@ -143,7 +143,7 @@ const Skills: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
-          className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+          className="grid md:grid-cols-3 gap-8"
         >
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
@@ -174,8 +174,8 @@ const Skills: React.FC = () => {
                       <span className="text-gray-600 dark:text-muted-foreground text-sm">{skill.level}%</span>
                     </div>
                     
-                    {/* Progress Bar with Gradient */}
-                    <div className="w-full bg-gray-200 dark:bg-muted rounded-full h-3 overflow-hidden">
+                    {/* Progress Bar */}
+                    <div className="w-full bg-gray-200 dark:bg-muted rounded-full h-2">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -185,12 +185,9 @@ const Skills: React.FC = () => {
                           delay: categoryIndex * 0.2 + skillIndex * 0.1 + 0.3,
                           ease: "easeOut"
                         }}
-                        className="bg-gradient-to-r from-neon-cyan via-neon-blue to-purple-500 h-3 rounded-full relative overflow-hidden shadow-lg"
-                        style={{
-                          boxShadow: '0 0 10px rgba(0, 255, 255, 0.5)'
-                        }}
+                        className="bg-gradient-to-r from-neon-cyan to-neon-blue h-2 rounded-full relative overflow-hidden"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform skew-x-12 animate-pulse-slow"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform skew-x-12 animate-pulse-slow"></div>
                       </motion.div>
                     </div>
                   </motion.div>
@@ -198,35 +195,6 @@ const Skills: React.FC = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Tools & Technologies */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16"
-        >
-          <h3 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-neon-cyan dark:to-neon-blue bg-clip-text text-transparent mb-12 text-center">
-            Tools & Technologies
-          </h3>
-          
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-            {tools.map((tool, index) => (
-              <motion.span
-                key={tool}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="px-4 py-2 bg-white/95 dark:bg-white/10 text-gray-700 dark:text-foreground border border-gray-200 dark:border-white/20 rounded-full text-sm font-medium backdrop-blur-sm hover:shadow-lg transition-all duration-300"
-              >
-                {tool}
-              </motion.span>
-            ))}
-          </div>
         </motion.div>
 
         {/* Coding Activity Section */}
@@ -237,9 +205,7 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-24"
         >
-          <h3 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-neon-cyan dark:to-neon-blue bg-clip-text text-transparent mb-12 text-center">
-            Coding Activity
-          </h3>
+          <h3 className="text-3xl font-bold text-gray-800 dark:text-foreground mb-12 text-center">Coding Activity</h3>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* LeetCode Section */}

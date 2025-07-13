@@ -9,13 +9,63 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: 'EchoHaven - Anonymous Messaging Platform',
-      description: 'A privacy-focused anonymous messaging web application where users can register, share public posts, comment (including nested replies), and interact while maintaining anonymity. Designed to encourage free expression, the platform features secure authentication, protected routes, comment trees, and interactive UX powered by a modern UI stack.',
-      image: 'https://famisafe.wondershare.com/images/article/2019/10/anonymous-chat-app-review-1.jpg',
+      title: 'E-Commerce Platform',
+      description: 'A modern e-commerce platform with React, Node.js, and Stripe integration. Features include real-time inventory, user authentication, and admin dashboard.',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
       category: 'Full Stack',
-      tech: ['React', 'Vite', 'Tailwind CSS', 'Redux Toolkit', 'React Router', 'React Query', 'Express.js', 'Node.js', 'MongoDB', 'Mongoose', 'JWT', 'Axios', 'Toastify', 'Dotenv'],
-      demo: 'https://echohaven-janarthana-s-projects.vercel.app',
-      github: 'https://github.com/JANARTHANA21/anony-post.git'
+      tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      demo: 'https://demo.com',
+      github: 'https://github.com'
+    },
+    {
+      id: 2,
+      title: 'Task Management App',
+      description: 'Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
+      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
+      category: 'Frontend',
+      tech: ['React', 'TypeScript', 'Tailwind', 'Firebase'],
+      demo: 'https://demo.com',
+      github: 'https://github.com'
+    },
+    {
+      id: 3,
+      title: 'Weather Analytics Dashboard',
+      description: 'Data visualization dashboard showing weather patterns and analytics with interactive charts and real-time data updates.',
+      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop',
+      category: 'Frontend',
+      tech: ['React', 'D3.js', 'REST API', 'Recharts'],
+      demo: 'https://demo.com',
+      github: 'https://github.com'
+    },
+    {
+      id: 4,
+      title: 'Social Media API',
+      description: 'RESTful API for social media platform with user authentication, post management, and real-time messaging capabilities.',
+      image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&h=400&fit=crop',
+      category: 'Backend',
+      tech: ['Node.js', 'Express', 'MongoDB', 'Socket.io'],
+      demo: 'https://demo.com',
+      github: 'https://github.com'
+    },
+    {
+      id: 5,
+      title: 'AI Content Generator',
+      description: 'Full-stack application leveraging AI APIs to generate content with user-friendly interface and content management system.',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop',
+      category: 'Full Stack',
+      tech: ['Next.js', 'OpenAI API', 'PostgreSQL', 'Prisma'],
+      demo: 'https://demo.com',
+      github: 'https://github.com'
+    },
+    {
+      id: 6,
+      title: 'Portfolio Website',
+      description: 'Interactive 3D portfolio website with animations, particle systems, and responsive design built with modern technologies.',
+      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop',
+      category: 'Frontend',
+      tech: ['React', 'Three.js', 'Framer Motion', 'Tailwind'],
+      demo: 'https://demo.com',
+      github: 'https://github.com'
     }
   ];
 
@@ -101,21 +151,21 @@ const Projects: React.FC = () => {
             animate="visible"
             exit="hidden"
             variants={containerVariants}
-            className="grid place-items-center gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={itemVariants}
                 whileHover={{ y: -10 }}
-                className="bg-white/90 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/20 rounded-2xl overflow-hidden group hover:shadow-xl dark:hover:shadow-neon-cyan/10 transition-all duration-300 shadow-lg max-w-4xl w-full"
+                className="bg-white/90 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/20 rounded-2xl overflow-hidden group hover:shadow-xl dark:hover:shadow-neon-cyan/10 transition-all duration-300 shadow-lg"
               >
                 {/* Project Image */}
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 md:h-80 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
@@ -145,15 +195,15 @@ const Projects: React.FC = () => {
                 </div>
 
                 {/* Project Info */}
-                <div className="p-8">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-4">
-                    <h3 className="text-2xl font-bold text-gray-800 dark:text-foreground">{project.title}</h3>
-                    <span className="text-sm px-3 py-1 bg-orange-100 dark:bg-neon-cyan/20 text-orange-700 dark:text-neon-cyan rounded-full w-fit">
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-foreground">{project.title}</h3>
+                    <span className="text-xs px-2 py-1 bg-orange-100 dark:bg-neon-cyan/20 text-orange-700 dark:text-neon-cyan rounded-full">
                       {project.category}
                     </span>
                   </div>
                   
-                  <p className="text-gray-600 dark:text-muted-foreground text-base mb-6 leading-relaxed">
+                  <p className="text-gray-600 dark:text-muted-foreground text-sm mb-4 line-clamp-3">
                     {project.description}
                   </p>
 
@@ -162,37 +212,11 @@ const Projects: React.FC = () => {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs px-3 py-1 bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-foreground rounded-full border border-gray-200 dark:border-white/20"
+                        className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-foreground rounded border border-gray-200 dark:border-white/20"
                       >
                         {tech}
                       </span>
                     ))}
-                  </div>
-
-                  {/* Project Links */}
-                  <div className="flex flex-wrap gap-4 mt-6">
-                    <motion.a
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 dark:from-neon-cyan dark:to-neon-blue text-white dark:text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </motion.a>
-                    <motion.a
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-6 py-3 bg-white/90 dark:bg-white/10 text-gray-700 dark:text-foreground font-semibold rounded-lg border border-gray-200 dark:border-white/20 hover:shadow-lg transition-all duration-300"
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      View Code
-                    </motion.a>
                   </div>
                 </div>
               </motion.div>
@@ -211,7 +235,7 @@ const Projects: React.FC = () => {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://github.com/JANARTHANA21"
+            href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-white/90 dark:bg-white/10 text-gray-700 dark:text-foreground font-semibold rounded-lg border border-gray-200 dark:border-white/20 hover:border-orange-400 dark:hover:border-neon-cyan/50 transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-xl"
