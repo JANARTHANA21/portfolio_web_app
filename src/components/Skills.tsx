@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -125,7 +126,7 @@ const Skills: React.FC = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold gradient-text mb-6"
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-neon-cyan dark:to-neon-blue bg-clip-text text-transparent mb-6"
           >
             Skills & Technologies
           </motion.h2>
@@ -207,7 +208,9 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16"
         >
-          <h3 className="text-3xl font-bold text-gray-800 dark:text-foreground mb-12 text-center">Tools & Technologies</h3>
+          <h3 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-neon-cyan dark:to-neon-blue bg-clip-text text-transparent mb-12 text-center">
+            Tools & Technologies
+          </h3>
           
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
             {tools.map((tool, index) => (
@@ -234,7 +237,9 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-24"
         >
-          <h3 className="text-3xl font-bold text-gray-800 dark:text-foreground mb-12 text-center">Coding Activity</h3>
+          <h3 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-neon-cyan dark:to-neon-blue bg-clip-text text-transparent mb-12 text-center">
+            Coding Activity
+          </h3>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* LeetCode Section */}
