@@ -9,65 +9,16 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A modern e-commerce platform with React, Node.js, and Stripe integration. Features include real-time inventory, user authentication, and admin dashboard.',
+      title: 'EchoHaven - Anonymous Platform',
+      description: 'A privacy-focused anonymous messaging web application where users can register, share public posts, comment (including nested replies), and interact while maintaining anonymity. Designed to encourage free expression, the platform features secure authentication, protected routes, comment trees, and interactive UX powered by a modern UI stack.',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
       category: 'Full Stack',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      demo: 'https://demo.com',
-      github: 'https://github.com'
-    },
-    {
-      id: 2,
-      title: 'Task Management App',
-      description: 'Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
-      category: 'Frontend',
-      tech: ['React', 'JavaScript', 'Tailwind', 'Firebase'],
-      demo: 'https://demo.com',
-      github: 'https://github.com'
-    },
-    {
-      id: 3,
-      title: 'Weather Analytics Dashboard',
-      description: 'Data visualization dashboard showing weather patterns and analytics with interactive charts and real-time data updates.',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop',
-      category: 'Frontend',
-      tech: ['React', 'D3.js', 'REST API', 'Recharts'],
-      demo: 'https://demo.com',
-      github: 'https://github.com'
-    },
-    {
-      id: 4,
-      title: 'Social Media API',
-      description: 'RESTful API for social media platform with user authentication, post management, and real-time messaging capabilities.',
-      image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&h=400&fit=crop',
-      category: 'Backend',
-      tech: ['Node.js', 'Express', 'MongoDB', 'Socket.io'],
-      demo: 'https://demo.com',
-      github: 'https://github.com'
-    },
-    {
-      id: 5,
-      title: 'AI Content Generator',
-      description: 'Full-stack application leveraging AI APIs to generate content with user-friendly interface and content management system.',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop',
-      category: 'Full Stack',
-      tech: ['React', 'OpenAI API', 'PostgreSQL', 'Prisma'],
-      demo: 'https://demo.com',
-      github: 'https://github.com'
-    },
-    {
-      id: 6,
-      title: 'Portfolio Website',
-      description: 'Interactive 3D portfolio website with animations, particle systems, and responsive design built with modern technologies.',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop',
-      category: 'Frontend',
-      tech: ['React', 'Three.js', 'Framer Motion', 'Tailwind'],
-      demo: 'https://demo.com',
-      github: 'https://github.com'
+      tech: [ 'React', 'Vite', 'Tailwind CSS', 'Redux Toolkit', 'React Router', 'React Query', 'Express.js', 'Node.js', 'MongoDB', 'Mongoose', 'JWT', 'Axios', 'Toastify'],
+      demo: 'https://echohaven-janarthana-s-projects.vercel.app',
+      github: 'https://github.com/JANARTHANA21/anony-post.git'
     }
   ];
+
 
   const categories = ['All', 'Full Stack', 'Frontend', 'Backend'];
 

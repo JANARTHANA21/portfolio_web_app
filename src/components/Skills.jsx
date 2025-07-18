@@ -9,12 +9,13 @@ const Skills = () => {
       title: 'Frontend',
       icon: Globe,
       skills: [
-        { name: 'React', level: 95 },
+        { name: 'HTML5/CSS3', level: 95 },
+        { name: 'Bootstrap', level: 65 },
+        { name: 'Tailwind CSS', level: 70 },
         { name: 'JavaScript', level: 92 },
-        { name: 'TypeScript', level: 88 },
-        { name: 'HTML/CSS', level: 95 },
-        { name: 'Tailwind CSS', level: 90 },
-        { name: 'Next.js', level: 85 }
+        { name: 'React.js', level: 85 },
+        { name: 'Redux', level: 88 },
+        { name: 'React Query', level: 83 }
       ],
       color: 'from-blue-500 to-cyan-500'
     },
@@ -23,42 +24,34 @@ const Skills = () => {
       icon: Database,
       skills: [
         { name: 'Node.js', level: 88 },
-        { name: 'Python', level: 82 },
-        { name: 'PostgreSQL', level: 80 },
-        { name: 'MongoDB', level: 85 },
+        { name: 'Express.js', level: 92 },
+        { name: 'MongoDB', level: 90 },
+        { name: 'Mongoose', level: 98 },
         { name: 'REST APIs', level: 90 },
-        { name: 'GraphQL', level: 75 }
       ],
       color: 'from-green-500 to-emerald-500'
-    },
-    {
-      title: 'Mobile',
-      icon: Smartphone,
-      skills: [
-        { name: 'React Native', level: 80 },
-        { name: 'Flutter', level: 70 },
-        { name: 'iOS (Swift)', level: 65 },
-        { name: 'Android', level: 68 }
-      ],
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      title: 'DevOps & Cloud',
-      icon: Cloud,
-      skills: [
-        { name: 'AWS', level: 78 },
-        { name: 'Docker', level: 82 },
-        { name: 'Kubernetes', level: 70 },
-        { name: 'CI/CD', level: 85 },
-        { name: 'Linux', level: 80 }
-      ],
-      color: 'from-orange-500 to-red-500'
     }
   ];
 
   const tools = [
-    'VS Code', 'Git', 'Figma', 'Postman', 'Jira', 'Slack',
-    'Webpack', 'Vite', 'ESLint', 'Prettier', 'Jest', 'Cypress'
+'VS Code',
+'Git',
+'Vite',
+'CRA (Create React App)',
+'Nodemailer',
+'Multer',
+'Cloudinary',
+'dotenv',
+'Postman',
+'Esbuild',
+'Vercel',
+'Netlify',
+'Render',
+'MongoDB Atlas',
+'Helmet',
+'CORS',
+'Rate Limiting',
+'Input Validation',
   ];
 
   const containerVariants = {
@@ -164,7 +157,7 @@ const Skills = () => {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h3 className="text-2xl font-bold text-gray-800 dark:text-foreground mb-8">
+          <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-neon-cyan dark:to-neon-blue bg-clip-text text-transparent mb-6">
             Tools & Technologies
           </h3>
           <div className="flex flex-wrap justify-center gap-4">

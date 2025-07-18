@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Download } from 'lucide-react';
+import emailjs from "@emailjs/browser";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,31 +19,45 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
-    alert('Message sent! (This is a demo)');
-    setFormData({ name: '', email: '', message: '' });
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+await emailjs.send(
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  {
+    from_name: formData.name,
+    from_email: formData.email,
+    message: formData.message,
+  },
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+);
+    alert("Message sent! 🎉");
+    setFormData({ name: "", email: "", message: "" });
+  } catch (err) {
+    console.error(err);
+    alert("Oops, failed to send. Try again?");
+  }
+};
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email',
-      detail: 'hello@alexjohnson.dev',
+      detail: 'janarthana.life@gmail.com',
       href: 'mailto:hello@alexjohnson.dev'
     },
     {
       icon: Phone,
       title: 'Phone',
-      detail: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      detail: '+91 7200490562',
+      href: 'tel:+917200490562'
     },
     {
       icon: MapPin,
       title: 'Location',
-      detail: 'San Francisco, CA',
+      detail: '49A,  Velavan Nagar,  avalpoondurai,  Erode,   Tamilnadu,  India',
       href: '#'
     }
   ];
@@ -50,13 +66,13 @@ const Contact = () => {
     {
       icon: Github,
       name: 'GitHub',
-      href: 'https://github.com',
+      href: 'https://github.com/JANARTHANA21',
       color: 'hover:text-gray-800 dark:hover:text-white'
     },
     {
       icon: Linkedin,
       name: 'LinkedIn',
-      href: 'https://linkedin.com',
+      href: 'https://www.linkedin.com/in/janarthana21/',
       color: 'hover:text-blue-600'
     }
   ];
