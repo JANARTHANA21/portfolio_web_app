@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Code, Lightbulb, Users, Zap } from 'lucide-react';
 
 const About = () => {
+  const a=0;
   const highlights = [
     {
       icon: Code,
